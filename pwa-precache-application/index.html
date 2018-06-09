@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Caching World!</title>
+
+    <!-- Image -->
+    <img width="300" height="300" src="./images/hello.png" />
+    <!-- JavaScript -->
+    <script async src="./js/script.js"></script>
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(registration => {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                })
+                .catch(err => {
+                    // registration failed
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
