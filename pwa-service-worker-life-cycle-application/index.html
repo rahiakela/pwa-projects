@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Service Worker Lifecycle</title>
+</head>
+
+<body>
+    An image will appear here in 3 seconds:......
+    <script>
+        navigator.serviceWorker.register('/sw-v2.js')
+            .then(reg => console.log('SW registered!', reg))
+            .catch(err => console.log('Boo!', err));
+
+        setTimeout(() => {
+            const img = new Image();
+            img.src = '/dog.svg';
+            document.body.appendChild(img);
+        }, 3000);    
+    </script>
+</body>
+
+</html>
