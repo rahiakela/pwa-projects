@@ -1,6 +1,18 @@
 {
   "hosting": {
     "public": "dist",
+    "headers": [
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value":
+              "<styles.be1b403d2b1c92402505.bundle.css>;rel=preload;as=style,<vendor.bb043331cf8cc1288c59.bundle.js>;rel=preload;as=script,<main.9af65702f63b470f009d.bundle.js>;rel=preload;as=script,<inline.b099d8370da4ce48cc46.bundle.js>;rel=preload;as=script"
+          }
+        ]
+      }
+    ],
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
