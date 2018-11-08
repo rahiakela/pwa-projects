@@ -195,17 +195,28 @@
 
     if ('serviceWorker' in navigator) {  
 
-      navigator.serviceWorker.register('/sw.js')
-        .then(function (registration) {    // Registration was successful
-             
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);  
+        var cacheList = [
+            "index.html",
+            "style/main.css",
+            "js/keyboard_input_manager.js",
+            "js/html_actuator.js",
+            "js/grid.js",
+            "js/tile.js",
+            "js/local_storage_manager.js",
+            "js/game_manager.js",
+            "js/application.js"
+        ];
 
-        }).catch(function (err) {    // registration failed :(
-             
-          console.log('ServiceWorker registration failed: ', err);  
-        });
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {    // Registration was successful
+               
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);  
 
+          }).catch((err) => {    // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);  
+          });
     }
+
   </script>
 
 </body>

@@ -14,7 +14,7 @@ preCache = "PRECACHE-" + version,
 
 /*  Service Worker Event Handlers */
 
-self.addEventListener("install", function (event) {
+self.addEventListener("install", (event) => {
 
     console.log("Installing the service worker!");
 
@@ -29,7 +29,7 @@ self.addEventListener("install", function (event) {
 
 });
 
-self.addEventListener("activate", function (event) {
+self.addEventListener("activate", (event) => {
 
     event.waitUntil(
 
@@ -52,12 +52,12 @@ self.addEventListener("activate", function (event) {
 
 });
 
-self.addEventListener("fetch", function (event) {
+self.addEventListener("fetch", (event) => {
 
     event.respondWith(
 
         caches.match(event.request)
-        .then(function (response) {
+        .then((response) => {
 
             if (response) {
                 return response;
