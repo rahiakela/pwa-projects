@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [
     `
-      
+      .loading-indicator{
+        height: 300px;
+        margin: 0 auto;
+      }
     `
   ]
 })
